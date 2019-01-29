@@ -133,6 +133,7 @@ public class Main
     {
         System.out.println("Consult for a (1) collaborator, (2) project");
         Scanner input = new Scanner(System.in);
+        Scanner input3 = new Scanner(System.in);
         int option;
         boolean found = false;
         option = input.nextInt();
@@ -176,7 +177,7 @@ public class Main
         } else if (option == 2) {
             System.out.println("Enter project's exact name");
             String name;
-            name = input.nextLine();
+            name = input3.nextLine();
             for(Project i : projects)
             {
                 if(i.title.equals(name))
@@ -220,8 +221,8 @@ public class Main
                     Scanner input4 = new Scanner(System.in);
 
                     System.out.println("Enter the professor's email");
-                    email = input3.nextLine();
                     for (Professor i : professors) {
+                        email = input3.nextLine();
                         my_email = i.getEmail();
                         if (email.equals(my_email)) {
                             found = true;
@@ -231,7 +232,7 @@ public class Main
 
                             Project newProject = new Project(1, name);
                             projects.add(newProject);
-                            project_head.professor_projects.add(newProject); //adiciona o projeto na lista de projetos desse professor head
+                            project_head.collaborator_projects.add(newProject); //adiciona o projeto na lista de projetos desse professor head
                             newProject.projects_professors.add(project_head);
 
                             System.out.println("Add all info? (1) Yes or (2) no. You can edit it later");
@@ -264,6 +265,7 @@ public class Main
                     {
                         System.out.println("This project doesn't seem to exist...");
                     }
+                    break;
 
                 case 3:
 
@@ -288,12 +290,14 @@ public class Main
     {
         System.out.println("Laboratory's Report");
         int number = 0;
+        int prof = 0;
 
         for (Student i : students) {
             number++;
         }
         for (Professor i : professors) {
             number++;
+            prof++;
         }
         for (Researcher i : researchers) {
             number++;
@@ -337,6 +341,7 @@ public class Main
                 number++;
             }
         }
+        number = number - prof;
         System.out.println("Number of mentorships: " + number);
 
     }
@@ -367,7 +372,7 @@ public class Main
                 if (i.email.equals(a_email)) {
                     found3 = true;
                     newPublication.publication_professors.add(i);
-                    i.professor_publications.add(newPublication);
+                    i.collaborator_publications.add(newPublication);
                 }
             }
             if (!found3) {
@@ -376,7 +381,7 @@ public class Main
                     if (i.email.equals(a_email)) {
                         found3 = true;
                         newPublication.publication_students.add(i);
-                        i.student_publications.add(newPublication);
+                        i.collaborator_publications.add(newPublication);
                     }
                 }
             }
@@ -385,7 +390,7 @@ public class Main
                     if (i.email.equals(a_email)) {
                         found3 = true;
                         newPublication.publication_researchers.add(i);
-                        i.researcher_publications.add(newPublication);
+                        i.collaborator_publications.add(newPublication);
                     }
                 }
             }
@@ -418,7 +423,7 @@ public class Main
                     {
                         if(i.title.equals(projtitle))
                         {
-                            j.addPublication(i);
+                            j.add1Publication(i, j);
                             i.addProject(j);
                             System.out.println("Added!");
                             added = true;
