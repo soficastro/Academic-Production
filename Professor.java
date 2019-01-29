@@ -1,38 +1,30 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Professor
+public class Professor extends Person
 {
-    String name;
-    String email;
-    ArrayList<Project> professor_projects;
-    ArrayList<Publication> professor_publications;
     ArrayList<Student> professor_mentorships;
 
     public Professor(String name, String email)
     {
         this.name = name;
         this.email = email;
-        this.professor_projects = new ArrayList<Project>();
-        this.professor_publications = new ArrayList<Publication>();
+        this.collaborator_projects = new ArrayList<Project>();
+        this.collaborator_publications = new ArrayList<Publication>();
         this.professor_mentorships  = new ArrayList<Student>();
-    }
-
-    public String getEmail() {
-        return this.email;
     }
 
     public void display()
     {
-        System.out.println(this.name + "\nProfessor");
+        System.out.println("\n" + this.name + "\nProfessor");
         System.out.println(this.email);
-        for (Project i : this.professor_projects)
+        for (Project i : this.collaborator_projects)
         {
-            System.out.println(i.getTitle());
+            System.out.println("Project:" + i.getTitle());
         }
-        for (Publication i : this.professor_publications)
+        for (Publication i : this.collaborator_publications)
         {
-            System.out.println(i.getTitle());
+            System.out.println("Publication:" + i.getTitle());
         }
         if(this.professor_mentorships != null)
         {
