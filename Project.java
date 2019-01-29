@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Project
@@ -80,7 +81,7 @@ public class Project
                     my_email = i.getEmail();
                     if (email.equals(my_email)) {
                         project.projects_students.add(i);
-                        i.student_projects.add(project);
+                        i.collaborator_projects.add(project);
 
                         found = true;
                     }
@@ -90,7 +91,7 @@ public class Project
                         my_email = i.getEmail();
                         if (email.equals(my_email)) {
                             project.projects_professors.add(i);
-                            i.professor_projects.add(project);
+                            i.collaborator_projects.add(project);
                             found = true;
                         }
                     }
@@ -100,7 +101,7 @@ public class Project
                         my_email = i.getEmail();
                         if (email.equals(my_email)) {
                             project.projects_researchers.add(i);
-                            i.researcher_projects.add(project);
+                            i.collaborator_projects.add(project);
                             found = true;
                         }
                     }
@@ -194,11 +195,16 @@ public class Project
                             }
 
                         }
+                        else
+                        {
+                            System.out.println("You can only edit this once you publish something");
+                        }
                     }
                     else if(project.status == 3)
                     {
-                        System.out.println("The project is cconcluded. You can't change that");
+                        System.out.println("The project is concluded. You can't change that");
                     }
+                    break;
                 case 3:
                     Scanner input6 = new Scanner(System.in);
                     System.out.println("Enter email");
@@ -207,7 +213,7 @@ public class Project
                         my_email = i.getEmail();
                         if (email.equals(my_email)) {
                             project.projects_students.add(i);
-                            i.student_projects.add(project);
+                            i.collaborator_projects.add(project);
 
                             found = true;
                         }
@@ -217,7 +223,7 @@ public class Project
                             my_email = i.getEmail();
                             if (email.equals(my_email)) {
                                 project.projects_professors.add(i);
-                                i.professor_projects.add(project);
+                                i.collaborator_projects.add(project);
                                 found = true;
                             }
                         }
@@ -227,7 +233,7 @@ public class Project
                             my_email = i.getEmail();
                             if (email.equals(my_email)) {
                                 project.projects_researchers.add(i);
-                                i.researcher_projects.add(project);
+                                i.collaborator_projects.add(project);
                                 found = true;
                             }
                         }
@@ -241,7 +247,9 @@ public class Project
                     {
                         System.out.println("Not found...");
                     }
+                    break;
                 case 4:
+                    addPublication(publications, project);
                 case 5:
                     System.out.println("Hey hey hey the end is near");
                     process = false;
@@ -250,12 +258,33 @@ public class Project
         }
     }
 
-    public void addPublication(Publication publication)
+    public void addPublication(ArrayList<Publication> publications, Project project)
     {
-        this.projects_publications.add(publication);
+        System.out.println("Enter the exact name of the publication");
+        Scanner input = new Scanner(System.in);
+        String pub_name = input.nextLine();
+        boolean found = false;
+        for(Publication i : publications)
+        {
+            if(i.title.equals(pub_name))
+            {
+                project.projects_publications.add(i);
+                found = true;
+            }
+        }
+        if(!found)
+        {
+            System.out.println("Something went wrong");
+        }
+
     }
 
-    public void display()
+    public void add1Publication(Publication publication, Project project)
+    {
+        project.projects_publications.add(publication);
+    }
+
+    public void display() //mudar nome
     {
         System.out.println("WAIT FOR IT...");
     }
