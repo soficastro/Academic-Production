@@ -7,12 +7,14 @@ email: divers
 senha: 234
 
 FUNCIONALIDADES
+
 -> Alocação de alunos de gradução, alunos de pós graduação, alunos de mestrado, professores e pesquisadores;
 -> Alocação e edição de produções acadêmicas: pesquisas e publicações;
 -> Orientação entre professores e alunos;
 -> Consulta de acervo de produções acadêmicas e colaboradores.
 
 CLASSES
+
   - Main
 Classe prinpical onde boa parte dos processos acontecem.
 
@@ -29,7 +31,7 @@ classes que poderiam estar numa superclasse Person.
 
   - Project
 Classe para a produção acadêmica Projeto. Possui os métodos "start" - que inicializa um projeto, caso você escolha adicionar
-todas as informações deste e também, através de um loop, adiciona seus participantea, e "edit" que permite a edição dessas
+todas as informações deste e também, através de um loop, adiciona seus participantes, e "edit" que permite a edição dessas
 mesmas informações. O método de exibir todas as informações de um projeto ainda não foi implementada.
 
   - Publication
@@ -39,18 +41,17 @@ em comum com a classe Project.
 
   - Researcher
 Classe para o tipo de colaborador Pesquisador. Tem as informações de nome, email, projetos e publicações. Possui um método 
-"display" que exibe todas as informações de um pesquisador. Essa função ainda nâo está totalmente implementada.A desvantagem
+"display" que exibe todas as informações de um pesquisador. Essa função ainda não está totalmente implementada. A desvantagem
 é que essa classe possui muitas semelhanças com outras classes que poderiam estar numa superclasse Person.
 
   - Student
 Classe para o tipo de colaborador Aluno. Tem as informações de nome, email, projetos, publicações e tipo de alunos. Possui
-um método "display" que exibe todas as informações de um alunosa função ainda nâo está totalmente implementada. A desvantagem
+um método "display" que exibe todas as informações de um alunosa função ainda não está totalmente implementada. A desvantagem
 é que essa classe possui muitas semelhanças com outras classes que poderiam estar numa superclasse Person.
 
 DISTRIBUIÇÃO DOS MÉTODOS
-A distribuição dos métodos ficou desorganizada. Boa parte dos métodos estão na classe Main entre eles "consult" que permite 
-uma consulta sobre um colaborador ou uma projeto; o método "login" que é chamado depois que o administrador pede acesso ao
-Sistema e onde acontecem todas as modificações de informações ou onde se chama métodos para tal; e o método "report" que dá
-um relatório do desempenho do Laboratório.
+Boa parte dos métodos estão na classe Main entre eles "consult" que permite uma consulta sobre um colaborador ou um projeto; o método 
+"login" que é chamado depois que o administrador pede acesso ao Sistema e onde acontecem todas as modificações de informações ou onde
+se chama métodos para tal; e o método "report" que dá um relatório do desempenho do Laboratório.
 
 
