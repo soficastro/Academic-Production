@@ -1,28 +1,17 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Student
+public class Student extends Person
 {
-    String name;
-    String email;
-    ArrayList<Project> student_projects;
-    ArrayList<Publication> student_publications;
     int type; //Type 1 = Undergrad, type 2 = Grad; type 3 = Master
 
     public Student(String name, String email, int type)
     {
         this.name = name;
         this.email = email;
-        this.student_projects = new ArrayList<Project>();
-        this.student_publications = new ArrayList<Publication>();
+        this.collaborator_projects = new ArrayList<Project>();
+        this.collaborator_publications = new ArrayList<Publication>();
         this.type = type;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
-    public String getName() {
-        return this.name;
     }
 
     public void display()
@@ -41,13 +30,13 @@ public class Student
             System.out.println("Master's student");
         }
         System.out.println(this.email);
-        for (Project i : this.student_projects) {
+        for (Project i : this.collaborator_projects) {
+            System.out.println("Project:" + i.getTitle());
+        }
+
+        for (Publication i : collaborator_publications) {
             System.out.println(i.getTitle());
         }
-        /*
-        for (Publication i : student_publications) {
-            System.out.println(i.getTitle());
-        }*/
 
         System.out.println("\n");
     }
