@@ -7,20 +7,20 @@ public class Researcher extends Person
     {
         this.name = name;
         this.email = email;
-        this.researcher_projects = new ArrayList<Project>();
-        this.researcher_publications = new ArrayList<Publication>();
+        this.collaborator_projects = new ArrayList<Project>();
+        this.collaborator_publications = new ArrayList<Publication>();
     }
-    
+
 
     public void display()
     {
         System.out.println(this.name + "\nResearcher");
         System.out.println(this.email);
-        for (Project i : this.researcher_projects) {
+        for (Project i : this.collaborator_projects) {
             System.out.println("Project: " + i.getTitle());
         }
-        
-        for (Publication i : researcher_publications) {
+
+        for (Publication i : collaborator_publications) {
             System.out.println("Publication: " + i.getTitle());
         }
     }
