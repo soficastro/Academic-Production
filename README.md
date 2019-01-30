@@ -3,8 +3,10 @@
 PROJETO REFATORADO
 
 Conta de Administrador:
+
 email: divers
 senha: 234
+
 
 # FUNCIONALIDADES
 
@@ -23,14 +25,14 @@ editar projeto, adicionar publicação, adicionar um orientando a um professor. 
   - Person:
 Classe para o tipo Pessoa, tem as informçoes de nome, email, projetos e publicações. Desta, herdam as classes:
 	- Professor
-		Classe para o tipo de colaborador Professor, herda de Person todos os atributos desta. Tem a informação orientandos. Possui um método "display" que exibe todas as informações de um professor, e adicionamento de orientação.
+		Classe para o tipo de colaborador Professor, herda de Person todos os atributos desta. Tem a informação orientandos. Possui um método "display" que exibe todas as informações de um professor, e adição de orientação.
 	- Student
 		Classe para o tipo de colaborador Aluno, herda de Person todos os atributos desta. Tem a informação tipo de alunos. Possui um método "display" que exibe todas as informações de um aluno. A função ainda não está totalmente implementada.
 	- Researcher
 		Classe para o tipo de colaborador Pesquisador, herda de Person todos os atributos desta. Possui um método "display" que exibe todas as informações de um pesquisador. Essa função ainda não está totalmente implementada.
   - Project
 Classe para a produção acadêmica Projeto. Possui os métodos "start" - que inicializa um projeto, caso você escolha adicionar
-todas as informações deste e também, através de um loop, adiciona seus participantes; e "edit" que permite a edição dessas mesmas informações. Também é onde estão os métodos de adição de publicação a projetos. O método de exibir todas as informações de um projeto ainda não foi implementada.
+todas as informações deste e também, através de um loop, adiciona seus participantes; e "edit" que permite a edição dessas mesmas informações, dando a opção de adicionar os dados quando quiser. Também é onde estão os métodos de adição de publicação a projetos. O método de exibir todas as informações de um projeto ainda não foi implementada.
   - Publication
 Classe para a produção acadêmica Publicação. Para adicionar informações a uma publicação, foram usados vários métodos diferentes que ainda não foram totalmente implementados. Outra desvantagem é que poderia estar numa superclasse Production com informações em comum com a classe Project.
 No momento, não é possível adicionar publicações.  
