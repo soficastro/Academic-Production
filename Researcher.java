@@ -2,10 +2,6 @@ import java.util.ArrayList;
 
 public class Researcher extends Person
 {
-    String name;
-    String email;
-    ArrayList<Project> researcher_projects;
-    ArrayList<Publication> researcher_publications;
 
     public Researcher(String name, String email)
     {
