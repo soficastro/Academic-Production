@@ -21,11 +21,11 @@ public class Researcher extends Person
         System.out.println(this.name + "\nResearcher");
         System.out.println(this.email);
         for (Project i : this.researcher_projects) {
-            System.out.println("Project: " i.getTitle());
+            System.out.println("Project: " + i.getTitle());
         }
         
         for (Publication i : researcher_publications) {
-            System.out.println("Publication: " i.getTitle());
+            System.out.println("Publication: " + i.getTitle());
         }
     }
 }
