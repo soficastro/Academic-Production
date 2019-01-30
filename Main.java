@@ -115,8 +115,6 @@ public class Main
                 case 4:
                     report(students, professors, researchers, projects, publications);
                     break;
-                default:
-                    System.out.println("Please choose a valid option, yes?");
             }
 
             System.out.println("Would you like to exit or continue?");
