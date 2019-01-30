@@ -11,8 +11,11 @@ senha: 234
 # FUNCIONALIDADES
 
 -> Alocação de alunos de gradução, alunos de pós graduação, alunos de mestrado, professores e pesquisadores;
+
 -> Alocação e edição de produções acadêmicas: pesquisas. Em breve, também publicações;
+
 -> Orientação entre professores e alunos;
+
 -> Consulta de acervo de produções acadêmicas e colaboradores.
 
 # CLASSES
