@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Researcher
+public class Researcher extends Person
 {
     String name;
     String email;
@@ -14,21 +14,18 @@ public class Researcher
         this.researcher_projects = new ArrayList<Project>();
         this.researcher_publications = new ArrayList<Publication>();
     }
-
-    public String getEmail() {
-        return this.email;
-    }
+    
 
     public void display()
     {
         System.out.println(this.name + "\nResearcher");
         System.out.println(this.email);
         for (Project i : this.researcher_projects) {
-            System.out.println(i.getTitle());
+            System.out.println("Project: " i.getTitle());
         }
-        /*
+        
         for (Publication i : researcher_publications) {
-            System.out.println(i.getTitle());
-        }*/
+            System.out.println("Publication: " i.getTitle());
+        }
     }
 }
