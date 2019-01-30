@@ -37,13 +37,15 @@ No momento, não é possível adicionar publicações.
 
 # DISTRIBUIÇÃO DOS MÉTODOS
 
-Boa parte dos métodos estão na classe Main entre eles "consult" que permite uma consulta sobre um colaborador ou um projeto; o método "login" que é chamado depois que o administrador pede acesso ao Sistema e onde acontecem todas as modificações de informações ou onde se chama métodos para tal; e o método "report" que dá um relatório do desempenho do Laboratório.
+Boa parte dos métodos estão na classe Main entre eles "consult" que permite uma consulta sobre um colaborador ou um projeto; o método "login" que é chamado depois que o administrador pede acesso ao Sistema e onde acontecem todas as modificações de informações ou onde se chama métodos para tal; e o método "report" que dá um relatório do desempenho do Laboratório. Os outros métodos estão nas demais classes.
 
-HERANÇA
-Herança foi usada na superclasse Person de onde extendem Professor, Student e Researcher. Isso tornou o projeto muito mais simples e fácil de trabalhar. Uso de overload em algumas parte do código facilitou processos.
+# HERANÇA
 
-EXTENSIBILIDADE
-Extensibilidade foi usada nas classes Professor, Student e Researcher que extendem de Person. 
+Herança foi usada na superclasse Person de onde extendem Professor, Student e Researcher. Isso tornou o projeto muito mais simples e fácil de trabalhar. Uso de overload em algumas parte do código facilitou e simplificou processos.
+
+# EXTENSIBILIDADE
+
+Extensibilidade foi usada nas classes Professor, Student e Researcher que extendem de Person. Como não há muitas classes, não foi necessário fazer outras implementações.
 
 TRATAMENTO DE EXCEÇÃO
 
