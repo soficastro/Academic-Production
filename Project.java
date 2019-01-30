@@ -47,17 +47,28 @@ public class Project
 
         //Set basic info
         System.out.println("Start date (dd \\n mm \\n yyyy):");
-        project.startDay = input.nextInt();
-        project.startMonth = input.nextInt();
-        project.startYear = input.nextInt();
-        System.out.println("Funding agency:");
-        project.agency = input2.nextLine();
-        System.out.println("Funded value:");
-        project.value = input3.nextInt();
-        System.out.println("Goals:");
-        project.goal = input4.nextLine();
-        System.out.println("Describe this project:");
-        project.description = input5.nextLine();
+
+        try
+        {
+            project.startDay = input.nextInt();
+            project.startMonth = input.nextInt();
+            project.startYear = input.nextInt();
+            System.out.println("Funding agency:");
+            project.agency = input2.nextLine();
+            System.out.println("Funded value:");
+            project.value = input3.nextInt();
+            System.out.println("Goals:");
+            project.goal = input4.nextLine();
+            System.out.println("Describe this project:");
+            project.description = input5.nextLine();
+
+        }
+        catch(InputMismatchException e)
+        {
+            System.out.println("Wrong input");
+            start(project, students, professors, researchers);
+        }
+
         project.basicInfoSet = true;
 
         System.out.println("This project is currently not in process. Do you want to change its status to" +
